@@ -28,7 +28,7 @@ const Home: NextPage = () => {
 						<p>Find in-depth information about what I&apos;m working on.</p>
 					</a>
 
-					<a href="https://nextjs.org/learn" className={styles.card}>
+					<a href="https://linkedin.com/in/danielcunhac" className={styles.card}>
 						<h2>Linkedin &rarr;</h2>
 						<p>Learn about me in an interactive page on my personal profile!</p>
 					</a>
