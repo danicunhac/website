@@ -10,6 +10,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 1rem;
+}
+
+.main > :first-child {
+	border-radius: 100%;
+	box-shadow: 0 0 50px rgba(124, 124, 138, 0.2);
 }
 
 .footer {
@@ -42,7 +48,7 @@
 .title {
 	margin: 0;
 	line-height: 1.15;
-	font-size: 4rem;
+	font-size: 1.5rem;
 }
 
 .title,
@@ -51,41 +57,43 @@
 }
 
 .description {
-	margin: 4rem 0;
 	line-height: 1.5;
-	font-size: 1rem;
+	font-size: 1.125rem;
 	color: #7c7c8a;
 	font-weight: 400;
-}
-
-.code {
-	background: #fafafa;
-	color: white;
-	border-radius: 5px;
-	padding: 0.75rem;
-	font-size: 1rem;
-	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-		Bitstream Vera Sans Mono, Courier New, monospace;
+	margin: 0;
 }
 
 .grid {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
 	max-width: 800px;
+	gap: 1rem;
 }
 
 .card {
-	margin: 1rem;
-	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.75rem 1rem;
 	text-align: left;
 	color: inherit;
 	text-decoration: none;
-	border: 1px solid #eaeaea;
-	border-radius: 10px;
+	border-radius: 12px;
 	transition: color 0.15s ease, border-color 0.15s ease;
-	max-width: 300px;
+
+	height: 56px;
+	width: 400px;
+
+	background-color: #202024;
+	color: #7c7c8a;
+}
+
+.card span {
+	font-size: 14px;
 }
 
 .card:hover,
@@ -122,9 +130,6 @@
 	.card,
 	.footer {
 		border-color: #222;
-	}
-	.code {
-		background: #111;
 	}
 	.logo img {
 		filter: invert(1);

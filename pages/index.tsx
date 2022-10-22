@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import {
+	LinkedinLogo,
+	GithubLogo,
+	InstagramLogo,
+	ArrowSquareOut,
+} from "phosphor-react";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -13,24 +19,37 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>
-					Welcome to <a href="#">My Webpage</a>
-				</h1>
+				<Image
+					src="https://avatars.githubusercontent.com/u/28742636?s=400&u=fded8cd4a0fecaf9e969753397c037d113c9fdd1&v=4"
+					width={200}
+					height={200}
+					alt="Picture of Daniel Costa"
+					className={styles.picture}
+				/>
 
-				<p className={styles.description}>
-					Developed by
-					<code className={styles.code}>@danicunhac</code>
-				</p>
+				<div className={styles.info}>
+					<h1 className={styles.title}>Daniel Costa</h1>
+					<p className={styles.description}>Software Engineer</p>
+				</div>
 
 				<div className={styles.grid}>
-					<a href="https://github.com/danicunhac" className={styles.card}>
-						<h2>Github &rarr;</h2>
-						<p>Find in-depth information about what I&apos;m working on.</p>
+					<a
+						href="https://linkedin.com/in/danielcunhac"
+						className={styles.card}
+					>
+						<LinkedinLogo size={24} />
+						<span>/in/danielcunhac</span>
+						<ArrowSquareOut size={24} />
 					</a>
-
-					<a href="https://linkedin.com/in/danielcunhac" className={styles.card}>
-						<h2>Linkedin &rarr;</h2>
-						<p>Learn about me in an interactive page on my personal profile!</p>
+					<a href="https://github.com/danicunhac" className={styles.card}>
+						<GithubLogo size={24} />
+						<span>/danicunhac</span>
+						<ArrowSquareOut size={24} />
+					</a>
+					<a href="https://instagram.com/dancunhac" className={styles.card}>
+						<InstagramLogo size={24} />
+						<span>@dancunhac</span>
+						<ArrowSquareOut size={24} />
 					</a>
 				</div>
 			</main>
