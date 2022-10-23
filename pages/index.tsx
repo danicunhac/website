@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
 			<main className={styles.main}>
 				<Image
-					src="https://avatars.githubusercontent.com/u/28742636?s=400&u=fded8cd4a0fecaf9e969753397c037d113c9fdd1&v=4"
+					src="https://i.imgur.com/9Do0bAF.jpg"
 					width={200}
 					height={200}
 					alt="Picture of Daniel Costa"
