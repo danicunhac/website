@@ -17,22 +17,6 @@
 	box-shadow: 0 0 50px rgba(124, 124, 138, 0.2);
 }
 
-.footer {
-	display: flex;
-	flex: 1;
-	padding: 2rem 0;
-	border-top: 1px solid #eaeaea;
-	justify-content: center;
-	align-items: center;
-}
-
-.footer a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-grow: 1;
-}
-
 .title {
 	margin: 0;
 	line-height: 1.15;
@@ -114,8 +98,7 @@
 		color: rgba(26, 26, 26, 0.7);
 	}
 
-	.card,
-	.footer {
+	.card {
 		background: #eaeaea;
 		border: 1px solid #7c7c8a;
 	}
@@ -126,18 +109,10 @@
 		color: #222;
 		border-color: #222;
 	}
-
-	.logo img {
-		filter: invert(1);
-	}
 }
 
 @media (prefers-color-scheme: dark) {
-	.card,
-	.footer {
+	.card {
 		border-color: #222;
-	}
-	.logo img {
-		filter: invert(1);
 	}
 }
