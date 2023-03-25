@@ -20,7 +20,9 @@ a {
 	}
 	body {
 		color: #121214;
-		background: #eaeaea;
+		background-image: url("/light-background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 }
 
@@ -30,6 +32,8 @@ a {
 	}
 	body {
 		color: #eaeaea;
-		background: #121214;
+		background-image: url("/dark-background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 }

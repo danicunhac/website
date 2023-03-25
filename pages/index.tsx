@@ -7,9 +7,12 @@ import {
 	InstagramLogo,
 	ArrowSquareOut,
 } from "phosphor-react";
+import axios from "axios";
 import styles from "../styles/Home.module.css";
 
-const Home: NextPage = () => {
+const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
+	console.log("avatar_url", avatar_url);
+
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -20,7 +23,7 @@ const Home: NextPage = () => {
 
 			<main className={styles.main}>
 				<Image
-					src="https://i.imgur.com/9Do0bAF.jpg"
+					src={avatar_url}
 					width={200}
 					height={200}
 					alt="Picture of Daniel Costa"
@@ -56,5 +59,17 @@ const Home: NextPage = () => {
 		</div>
 	);
 };
+
+export async function getStaticProps() {
+	const { data } = await axios.get("https://api.github.com/users/danicunhac");
+
+	const avatar_url = data.avatar_url;
+
+	return {
+		props: {
+			avatar_url,
+		},
+	};
+}
 
 export default Home;
