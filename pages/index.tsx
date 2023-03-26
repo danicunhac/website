@@ -11,8 +11,6 @@ import axios from "axios";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
-	console.log("avatar_url", avatar_url);
-
 	return (
 		<div className={styles.container}>
 			<Head>
