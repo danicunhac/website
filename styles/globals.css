@@ -20,7 +20,7 @@ a {
 	}
 	body {
 		color: #121214;
-		background-image: url("/light-background.jpg");
+		background-color: #eaeaea;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
@@ -32,7 +32,7 @@ a {
 	}
 	body {
 		color: #eaeaea;
-		background-image: url("/dark-background.jpg");
+		background-color: #121214;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
