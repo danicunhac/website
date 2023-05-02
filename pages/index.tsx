@@ -26,6 +26,8 @@ const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
 					height={200}
 					alt="Picture of Daniel Costa"
 					className={styles.picture}
+					placeholder="blur"
+					blurDataURL={avatar_url}
 				/>
 
 				<div className={styles.info}>
@@ -60,6 +62,8 @@ const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
 
 export async function getStaticProps() {
 	const { data } = await axios.get("https://api.github.com/users/danicunhac");
+
+	console.log("🚀 ~ file: index.tsx:69 ~ getStaticProps ~ data:", data);
 
 	const avatar_url = data.avatar_url;
 
