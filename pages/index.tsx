@@ -74,6 +74,7 @@ const Home: NextPage<{ avatar_url: string; views: number }> = ({
 					start={isCounted ? 0 : undefined}
 					end={views}
 					redraw={true}
+					duration={views * 0.1}
 				>
 					{({ countUpRef }) => (
 						<VisibilitySensor
