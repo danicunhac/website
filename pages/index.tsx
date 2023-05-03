@@ -1,18 +1,29 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 
 import {
 	LinkedinLogo,
 	GithubLogo,
 	InstagramLogo,
 	ArrowSquareOut,
+	Eye,
 } from "phosphor-react";
 import axios from "axios";
+import VisibilitySensor from "react-visibility-sensor";
+
+const CountUp = dynamic(() => import("react-countup"), { ssr: false });
 
 import styles from "../styles/Home.module.css";
 
-const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
+const Home: NextPage<{ avatar_url: string; views: number }> = ({
+	avatar_url,
+	views,
+}) => {
+	const [isCounted, setIsCounted] = useState(false);
+
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -57,6 +68,29 @@ const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
 						<ArrowSquareOut size={24} />
 					</a>
 				</div>
+				<CountUp
+					decimal="."
+					separator="."
+					start={isCounted ? 0 : undefined}
+					end={views}
+					redraw={true}
+				>
+					{({ countUpRef }) => (
+						<VisibilitySensor
+							onChange={(isVisible: boolean) => {
+								if (isVisible) {
+									setIsCounted(true);
+								}
+							}}
+						>
+							<div className={styles.card}>
+								<Eye size={24} />
+								<span>Views</span>
+								<span className={styles.count} ref={countUpRef} />
+							</div>
+						</VisibilitySensor>
+					)}
+				</CountUp>
 			</main>
 		</div>
 	);

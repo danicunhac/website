@@ -31,7 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 		getViews();
-		updateViews();
+		if (process.env.NODE_ENV === "production") {
+			updateViews();
+		}
 	}, [updateViews, getViews]);
 
 	return (
