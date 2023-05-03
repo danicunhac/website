@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+
 import {
 	LinkedinLogo,
 	GithubLogo,
@@ -8,6 +9,7 @@ import {
 	ArrowSquareOut,
 } from "phosphor-react";
 import axios from "axios";
+
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
@@ -62,8 +64,6 @@ const Home: NextPage<{ avatar_url: string }> = ({ avatar_url }) => {
 
 export async function getStaticProps() {
 	const { data } = await axios.get("https://api.github.com/users/danicunhac");
-
-	console.log("🚀 ~ file: index.tsx:69 ~ getStaticProps ~ data:", data);
 
 	const avatar_url = data.avatar_url;
 
