@@ -10,6 +10,7 @@ import {
 	InstagramLogo,
 	ArrowSquareOut,
 	Eye,
+	YoutubeLogo,
 } from "phosphor-react";
 import axios from "axios";
 import VisibilitySensor from "react-visibility-sensor";
@@ -65,6 +66,11 @@ const Home: NextPage<{ avatar_url: string; views: number }> = ({
 					<a href="https://instagram.com/dancunhac" className={styles.card}>
 						<InstagramLogo size={24} />
 						<span>@dancunhac</span>
+						<ArrowSquareOut size={24} />
+					</a>
+					<a href="https://youtube.com/@danicunhac" className={styles.card}>
+						<YoutubeLogo size={24} />
+						<span>/@danicunhac</span>
 						<ArrowSquareOut size={24} />
 					</a>
 				</div>
