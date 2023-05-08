@@ -11,6 +11,7 @@ import {
 	ArrowSquareOut,
 	Eye,
 	YoutubeLogo,
+	TwitterLogo,
 } from "phosphor-react";
 import axios from "axios";
 import VisibilitySensor from "react-visibility-sensor";
@@ -49,55 +50,64 @@ const Home: NextPage<{ avatar_url: string; views: number }> = ({
 					<p className={styles.description}>Software Engineer</p>
 				</div>
 
-				<div className={styles.grid}>
-					<a
-						href="https://linkedin.com/in/danielcunhac"
-						className={styles.card}
-					>
-						<LinkedinLogo size={24} />
-						<span>/in/danielcunhac</span>
-						<ArrowSquareOut size={24} />
-					</a>
-					<a href="https://github.com/danicunhac" className={styles.card}>
-						<GithubLogo size={24} />
-						<span>/danicunhac</span>
-						<ArrowSquareOut size={24} />
-					</a>
-					<a href="https://instagram.com/dancunhac" className={styles.card}>
-						<InstagramLogo size={24} />
-						<span>@dancunhac</span>
-						<ArrowSquareOut size={24} />
-					</a>
-					<a href="https://youtube.com/@danicunhac" className={styles.card}>
-						<YoutubeLogo size={24} />
-						<span>/@danicunhac</span>
-						<ArrowSquareOut size={24} />
-					</a>
-				</div>
-				<CountUp
-					decimal="."
-					separator="."
-					start={isCounted ? 0 : undefined}
-					end={views}
-					redraw={true}
-					duration={views * 0.1}
-				>
-					{({ countUpRef }) => (
-						<VisibilitySensor
-							onChange={(isVisible: boolean) => {
-								if (isVisible) {
-									setIsCounted(true);
-								}
-							}}
+				<div className={styles.row}>
+					<div className={styles.grid}>
+						<a
+							href="https://linkedin.com/in/danielcunhac"
+							className={styles.card}
 						>
-							<div className={styles.card}>
-								<Eye size={24} />
-								<span>Views</span>
-								<span className={styles.count} ref={countUpRef} />
-							</div>
-						</VisibilitySensor>
-					)}
-				</CountUp>
+							<LinkedinLogo size={24} />
+							<span>/in/danielcunhac</span>
+							<ArrowSquareOut size={24} />
+						</a>
+						<a href="https://github.com/danicunhac" className={styles.card}>
+							<GithubLogo size={24} />
+							<span>/danicunhac</span>
+							<ArrowSquareOut size={24} />
+						</a>
+						<a href="https://instagram.com/dancunhac" className={styles.card}>
+							<InstagramLogo size={24} />
+							<span>@dancunhac</span>
+							<ArrowSquareOut size={24} />
+						</a>
+					</div>
+					<div className={styles.grid}>
+						<a href="https://youtube.com/@danicunhac" className={styles.card}>
+							<YoutubeLogo size={24} />
+							<span>/@danicunhac</span>
+							<ArrowSquareOut size={24} />
+						</a>
+						<a href="https://twitter.com/danicunhac" className={styles.card}>
+							<TwitterLogo size={24} />
+							<span>@danicunhac</span>
+							<ArrowSquareOut size={24} />
+						</a>
+						<CountUp
+							decimal="."
+							separator="."
+							start={isCounted ? 0 : undefined}
+							end={views}
+							redraw={true}
+							duration={views * 0.1}
+						>
+							{({ countUpRef }) => (
+								<VisibilitySensor
+									onChange={(isVisible: boolean) => {
+										if (isVisible) {
+											setIsCounted(true);
+										}
+									}}
+								>
+									<div className={styles.card}>
+										<Eye size={24} />
+										<span>Views</span>
+										<span className={styles.count} ref={countUpRef} />
+									</div>
+								</VisibilitySensor>
+							)}
+						</CountUp>
+					</div>
+				</div>
 			</main>
 		</div>
 	);

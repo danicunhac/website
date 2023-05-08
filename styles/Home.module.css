@@ -63,6 +63,14 @@
 	gap: 1rem;
 }
 
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
 .card {
 	display: flex;
 	align-items: center;
