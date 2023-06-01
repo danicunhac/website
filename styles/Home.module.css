@@ -113,6 +113,9 @@
 	.card {
 		width: 260px;
 	}
+	.row {
+		flex-direction: column;
+	}
 }
 
 @media (prefers-color-scheme: light) {
